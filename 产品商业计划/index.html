@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Soul Stone | Intentional Handmade Jewelry</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=animated-hero">
   </head>
   <body>
     <header class="site-header">
@@ -15,12 +15,13 @@
       <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
       <div class="nav-wrap">
         <nav class="main-nav" aria-label="Primary navigation">
+          <a href="index.html" aria-current="page">Home</a>
           <a href="products.html">Products</a>
           <a href="materials.html">Materials</a>
           <a href="custom-design.html">Custom Design</a>
           <a href="about.html">About Us</a>
           <a href="login.html">Login</a>
-          <a href="cart.html">Cart</a>
+          <a class="cart-link" href="cart.html" aria-label="Cart"><span class="bag-icon" aria-hidden="true"></span><span class="cart-count">0</span></a>
         </nav>
         <a class="black-button" href="custom-design.html">Start Designing</a>
       </div>
@@ -103,21 +104,21 @@
               <span><b>3</b>Choose Charm</span>
               <span><b>4</b>Review & Create</span>
             </div>
-            <div class="intent-buttons">
-              <a href="custom-design.html"><b>T</b>Transformation</a>
-              <a href="custom-design.html"><b>S</b>Self Love</a>
-              <a href="custom-design.html"><b>P</b>Protection</a>
-              <a href="custom-design.html"><b>F</b>Focus</a>
-              <a href="custom-design.html"><b>N</b>New Beginning</a>
+            <div class="intent-buttons" role="tablist" aria-label="Choose a custom bracelet intention">
+              <button class="active" type="button" data-custom-intent="Transformation" role="tab" aria-selected="true"><b>T</b>Transformation</button>
+              <button type="button" data-custom-intent="Self Love" role="tab" aria-selected="false"><b>S</b>Self Love</button>
+              <button type="button" data-custom-intent="Protection" role="tab" aria-selected="false"><b>P</b>Protection</button>
+              <button type="button" data-custom-intent="Focus" role="tab" aria-selected="false"><b>F</b>Focus</button>
+              <button type="button" data-custom-intent="New Beginning" role="tab" aria-selected="false"><b>N</b>New Beginning</button>
             </div>
           </div>
           <div class="custom-detail">
-            <div class="custom-image" role="img" aria-label="Soul Stone bracelet preview on dark charcoal surface"></div>
+            <div class="custom-image" id="customImage" role="img" aria-label="Transformation bracelet preview"></div>
             <aside class="custom-dark">
-              <span class="eyebrow">Transformation</span>
-              <h3>Release. Renew. Rise.</h3>
-              <p>A moonlit bracelet composition for personal growth, courage and new chapters.</p>
-              <div class="stone-mini-list">
+              <span class="eyebrow" id="customIntentLabel">Transformation</span>
+              <h3 id="customIntentTitle">Release. Renew. Rise.</h3>
+              <p id="customIntentDescription">A moonlit bracelet composition for personal growth, courage and new chapters.</p>
+              <div class="stone-mini-list" id="customStoneList">
                 <span>Moonstone · New beginnings and intuition</span>
                 <span>Amethyst · Calm and clarity</span>
                 <span>Rose Quartz · Self-love and compassion</span>
@@ -193,39 +194,39 @@
           </div>
           <p>Meaningful handmade jewelry crafted with crystals, natural gemstones and symbolic charms for every chapter of your life.</p>
           <div class="socials" aria-label="Social links">
-            <a href="#" aria-label="Instagram">◎</a>
-            <a href="#" aria-label="LinkedIn">in</a>
-            <a href="#" aria-label="X">X</a>
-            <a href="#" aria-label="TikTok">♪</a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">◎</a>
+            <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">in</a>
+            <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">♪</a>
           </div>
         </div>
         <div class="footer-col">
           <h3>Shop</h3>
           <a href="products.html">Collection Gallery</a>
           <a href="custom-design.html">Custom Design</a>
-          <a href="products.html">New Arrivals</a>
-          <a href="products.html">Gift Ideas</a>
+          <a href="products.html#new-arrivals">New Arrivals</a>
+          <a href="products.html#gift-ideas">Gift Ideas</a>
         </div>
         <div class="footer-col">
           <h3>Themes</h3>
-          <a href="products.html">Self Love</a>
-          <a href="products.html">Protection</a>
-          <a href="products.html">Transformation</a>
+          <a href="products.html#self-love">Self Love</a>
+          <a href="products.html#protection">Protection</a>
+          <a href="products.html#transformation">Transformation</a>
           <a href="products.html">Explore More...</a>
         </div>
         <div class="footer-col">
           <h3>About Us</h3>
           <a href="about.html">Our Story</a>
           <a href="materials.html">Materials</a>
-          <a href="materials.html">Care guide</a>
-          <a href="about.html">Contact</a>
+          <a href="materials.html#care-guide">Care guide</a>
+          <a href="about.html#contact">Contact</a>
         </div>
       </div>
       <div class="footer-bottom">
         <span>© 2026 Soul Stones. All rights reserved.</span>
         <div class="legal">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
         </div>
       </div>
     </footer>

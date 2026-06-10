@@ -101,6 +101,56 @@ input {
   border-bottom-color: var(--gold);
 }
 
+.cart-link {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+.cart-link:hover,
+.cart-link[aria-current="page"] {
+  border-bottom-color: transparent;
+}
+
+.bag-icon {
+  position: relative;
+  width: 24px;
+  height: 26px;
+  border: 1.8px solid currentColor;
+  border-top: 0;
+}
+
+.bag-icon::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: -8px;
+  width: 11px;
+  height: 11px;
+  border: 1.8px solid currentColor;
+  border-bottom: 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.cart-count {
+  position: absolute;
+  top: 8px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: white;
+  font-size: .65rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .black-button,
 .gold-button,
 .outline-button {
@@ -166,9 +216,35 @@ input {
   align-items: center;
   padding: clamp(72px, 10vw, 140px) clamp(28px, 6vw, 86px);
   overflow: hidden;
+  background: var(--paper);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -3%;
+  background: url("assets/hero-bracelet.png") center right / cover no-repeat;
+  animation: heroDrift 18s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(90deg, rgba(255, 253, 249, .96) 0%, rgba(255, 253, 249, .86) 30%, rgba(255, 253, 249, .18) 62%, rgba(255, 253, 249, .02) 100%),
-    url("assets/hero-bracelet.png") center right / cover no-repeat;
+    linear-gradient(180deg, rgba(255, 253, 249, .04) 0%, rgba(255, 253, 249, .42) 100%);
+}
+
+@keyframes heroDrift {
+  0% {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: scale(1.1) translate3d(-2.4%, 1.4%, 0);
+  }
 }
 
 .hero-copy {
@@ -415,20 +491,29 @@ input {
   border: 1px solid var(--line-soft);
 }
 
-.intent-buttons a {
+.intent-buttons a,
+.intent-buttons button {
   display: grid;
   gap: 8px;
   min-height: 84px;
   place-items: center;
   border-right: 1px solid var(--line-soft);
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 0;
+  background: transparent;
+  color: var(--ink);
   font-size: .76rem;
+  cursor: pointer;
+  transition: background .2s ease;
 }
 
-.intent-buttons a:first-child {
+.intent-buttons button.active {
   background: #ead9eb;
 }
 
-.intent-buttons a:last-child {
+.intent-buttons a:last-child,
+.intent-buttons button:last-child {
   border-right: 0;
 }
 
@@ -572,8 +657,9 @@ input {
 .site-footer {
   margin: 0 clamp(18px, 4vw, 64px) 26px;
   padding: 40px clamp(18px, 4vw, 64px) 36px;
-  background: #fffafa;
+  background: #f8f1ed;
   border-top: 1px solid var(--line);
+  border-bottom: 1px solid rgba(214, 183, 130, .48);
 }
 
 .footer-main {
@@ -644,6 +730,12 @@ input {
   margin: 0 0 20px;
   color: var(--muted);
   font-size: .9rem;
+}
+
+.footer-col a:hover,
+.socials a:hover,
+.legal a:hover {
+  color: var(--gold);
 }
 
 .footer-bottom {
@@ -723,9 +815,15 @@ input {
   .hero {
     min-height: 720px;
     align-items: end;
+  }
+
+  .hero::before {
+    background-position: center top;
+  }
+
+  .hero::after {
     background:
-      linear-gradient(180deg, rgba(255, 253, 249, .1) 0%, rgba(255, 253, 249, .92) 52%, rgba(255, 253, 249, .98) 100%),
-      url("assets/hero-bracelet.png") center top / cover no-repeat;
+      linear-gradient(180deg, rgba(255, 253, 249, .1) 0%, rgba(255, 253, 249, .92) 52%, rgba(255, 253, 249, .98) 100%);
   }
 
   .product-grid,
@@ -777,7 +875,8 @@ input {
     width: 100%;
   }
 
-  .intent-buttons a {
+  .intent-buttons a,
+  .intent-buttons button {
     width: 100%;
     border-right: 0;
     border-bottom: 1px solid var(--line-soft);
@@ -799,5 +898,12 @@ input {
 
   .site-footer {
     margin-inline: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
+    transform: none;
   }
 }
