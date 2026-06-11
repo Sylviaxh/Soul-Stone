@@ -462,6 +462,7 @@ function setupBraceletDesigner() {
   const lengthNode = document.querySelector("#designerLength");
   const lengthSelect = document.querySelector("#designerLengthSelect");
   const materialsNode = document.querySelector("#designerMaterials");
+  const trashZone = document.querySelector("#designerTrash");
   const stoneGrid = document.querySelector("#stoneOptionGrid");
   const stoneSearch = document.querySelector("#designerStoneSearch");
   const colorFilter = document.querySelector("#designerColorFilter");
@@ -570,6 +571,12 @@ function setupBraceletDesigner() {
     return Math.atan2(event.clientY - centerY, event.clientX - centerX) * 180 / Math.PI;
   }
 
+  function pointerInTrash(event) {
+    if (!trashZone) return false;
+    const rect = trashZone.getBoundingClientRect();
+    return event.clientX >= rect.left && event.clientX <= rect.right && event.clientY >= rect.top && event.clientY <= rect.bottom;
+  }
+
   function itemSummary(items) {
     const counts = new Map();
     items.forEach((item) => {
@@ -625,21 +632,33 @@ function setupBraceletDesigner() {
     if (!item) return;
 
     bead.classList.add("is-dragging");
+    trashZone?.classList.add("is-active");
     bead.setPointerCapture(event.pointerId);
+    let lastPointerEvent = event;
 
     function moveBead(moveEvent) {
+      lastPointerEvent = moveEvent;
       const angle = angleFromPointer(moveEvent);
       const { x, y } = beadPosition(angle);
       item.manualAngle = angle;
       bead.style.setProperty("--x", `${x}%`);
       bead.style.setProperty("--y", `${y}%`);
+      trashZone?.classList.toggle("is-over", pointerInTrash(moveEvent));
     }
 
     function stopDragging() {
+      const shouldDelete = pointerInTrash(lastPointerEvent);
+      const itemIndex = Number(bead.dataset.designIndex);
       bead.classList.remove("is-dragging");
+      trashZone?.classList.remove("is-active", "is-over");
       bead.removeEventListener("pointermove", moveBead);
       bead.removeEventListener("pointerup", stopDragging);
       bead.removeEventListener("pointercancel", stopDragging);
+      if (shouldDelete && Number.isInteger(itemIndex)) {
+        selectedItems.splice(itemIndex, 1);
+        renderBraceletDesigner();
+        showToast("Bead removed.");
+      }
     }
 
     moveBead(event);
@@ -701,11 +720,19 @@ function setupBraceletDesigner() {
         product: productName,
         price: total,
         quantity: 1,
-        image: "assets/collection-bracelets.png",
         theme: "Custom Design",
         stone: stones.length ? stones.join(", ") : "Mixed stones",
         length: `${selectedLength()} cm`,
-        materials: itemSummary(selectedItems).join(" · ")
+        materials: itemSummary(selectedItems).join(" · "),
+        designItems: selectedItems.map((item) => ({
+          type: item.type,
+          name: item.name,
+          zh: item.zh,
+          color: item.color,
+          size: item.size || 0,
+          symbol: item.symbol || "",
+          manualAngle: item.manualAngle ?? null
+        }))
       });
       saveCart(cart);
       updateCartCount();
@@ -734,6 +761,45 @@ function cartItemDetails(item) {
     theme: item.theme || catalogItem?.theme || "Soul Stone",
     stone: item.stone || catalogItem?.stone || "Crystal"
   };
+}
+
+function cartDesignPreview(item) {
+  if (!Array.isArray(item.designItems) || !item.designItems.length) {
+    return `<img class="cart-thumb" src="${escapeHTML(cartItemDetails(item).image)}" alt="${escapeHTML(item.product)}">`;
+  }
+
+  const count = item.designItems.length;
+  const beads = item.designItems.map((designItem, index) => {
+    const angle = Number.isFinite(designItem.manualAngle)
+      ? designItem.manualAngle
+      : -90 + (360 / count) * index;
+    const radians = angle * Math.PI / 180;
+    const x = 50 + Math.cos(radians) * 38;
+    const y = 50 + Math.sin(radians) * 38;
+    const size = designItem.type === "stone" ? Math.max(16, Math.min(26, (designItem.size || 8) * 2.4)) : 16;
+    const symbol = designItem.symbol ? escapeHTML(designItem.symbol) : "";
+    return `<span class="cart-design-bead is-${escapeHTML(designItem.type || "stone")}" style="--x: ${x}%; --y: ${y}%; --bead-color: ${escapeHTML(designItem.color || "#d2a762")}; --bead-size: ${size}px">${symbol}</span>`;
+  }).join("");
+
+  return `<div class="cart-design-preview" role="img" aria-label="${escapeHTML(item.product)} preview"><span class="cart-design-ring"></span>${beads}</div>`;
+}
+
+function cartItemMeta(item) {
+  const details = cartItemDetails(item);
+  const chips = [];
+  chips.push(`<span>${escapeHTML(details.theme)}</span>`);
+  if (item.length) chips.push(`<span>${escapeHTML(item.length)}</span>`);
+  chips.push(`<span>Qty ${item.quantity}</span>`);
+
+  const materials = item.materials
+    ? item.materials.split(" · ").slice(0, 6).map((part) => `<span>${escapeHTML(part)}</span>`).join("")
+    : `<span>${escapeHTML(details.stone)}</span>`;
+
+  return `
+    <div class="cart-meta">${chips.join("")}</div>
+    <div class="cart-material-list" aria-label="Materials">${materials}</div>
+    <em>$${item.price} AUD each</em>
+  `;
 }
 
 function setupCartSwipeActions() {
@@ -779,12 +845,14 @@ function setupCartSwipeActions() {
 function renderCartPage() {
   const cartItems = document.querySelector("#cartItems");
   const cartTotal = document.querySelector("#cartTotal");
+  const cartHeroTotal = document.querySelector("#cartHeroTotal");
   if (!cartItems || !cartTotal) return;
 
   const cart = getCart();
   if (!cart.length) {
     cartItems.innerHTML = '<p class="empty-cart">Your cart is empty. Start with a piece that matches your intention.</p>';
     cartTotal.textContent = "$0 AUD";
+    if (cartHeroTotal) cartHeroTotal.textContent = "$0 AUD";
     return;
   }
 
@@ -792,11 +860,10 @@ function renderCartPage() {
     <div class="cart-swipe">
       <button class="cart-delete" type="button" data-remove-cart="${escapeHTML(item.product)}">Delete</button>
       <article class="cart-line">
-        <img class="cart-thumb" src="${escapeHTML(cartItemDetails(item).image)}" alt="${escapeHTML(item.product)}">
+        ${cartDesignPreview(item)}
         <div class="cart-info">
           <strong>${escapeHTML(item.product)}</strong>
-          <span>${escapeHTML(cartItemDetails(item).theme)} · ${escapeHTML(cartItemDetails(item).stone)}</span>
-          <em>$${item.price} AUD · Qty ${item.quantity}</em>
+          ${cartItemMeta(item)}
         </div>
         <b>$${item.price * item.quantity} AUD</b>
       </article>
@@ -804,6 +871,7 @@ function renderCartPage() {
   `).join("");
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
   cartTotal.textContent = `$${total} AUD`;
+  if (cartHeroTotal) cartHeroTotal.textContent = `$${total} AUD`;
   setupCartSwipeActions();
 }
 
