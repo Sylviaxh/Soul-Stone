@@ -1,10 +1,89 @@
 <!doctype html>
 <html lang="en">
-  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Custom Design | Soul Stone</title><link rel="stylesheet" href="styles.css"></head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Custom Design | Soul Stone</title>
+    <link rel="stylesheet" href="styles.css?v=bracelet-drag">
+  </head>
   <body>
-    <header class="site-header"><a class="logo-link" href="index.html"><img class="logo-mark" src="assets/logo-mark.png" alt=""><span class="brand-name">Soul Stone</span></a><button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button><div class="nav-wrap"><nav class="main-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="materials.html">Materials</a><a href="custom-design.html" aria-current="page">Custom Design</a><a href="about.html">About Us</a><a href="login.html">Login</a><a class="cart-link" href="cart.html" aria-label="Cart"><span class="bag-icon" aria-hidden="true"></span><span class="cart-count">0</span></a></nav><a class="black-button" href="custom-design.html">Start Designing</a></div></header>
-    <main><section class="page-hero"><h1>Custom Design</h1><p>Choose your intention, select natural stones, and add a symbolic charm to create a bracelet made for your story.</p></section><section class="section"><div class="custom-panel"><div class="custom-copy"><h2>Start your bracelet.</h2><p>This quick design form is ready for the future ecommerce flow. For now it captures the feeling of choosing an intention-led piece.</p><form class="form-grid" data-form="Your custom design request has been saved."><input required placeholder="Your intention, e.g. Protection"><input required placeholder="Preferred stones"><input placeholder="Charm idea"><button class="black-button" type="submit">Start Designing</button></form></div><div class="custom-image"></div></div></section></main>
-    <footer class="site-footer"><div class="footer-main"><div class="footer-brand"><img src="assets/logo-mark.png" alt=""><div><h2>Soul Stones</h2><div class="mini">Intentional Handmade Jewelry</div></div><p>Meaningful handmade jewelry crafted with crystals, natural gemstones and symbolic charms for every chapter of your life.</p><div class="socials"><a href="#">◎</a><a href="#">in</a><a href="#">X</a><a href="#">♪</a></div></div><div class="footer-col"><h3>Shop</h3><a href="products.html">Collection Gallery</a><a href="custom-design.html">Custom Design</a><a href="products.html">New Arrivals</a><a href="products.html">Gift Ideas</a></div><div class="footer-col"><h3>Themes</h3><a href="products.html">Self Love</a><a href="products.html">Protection</a><a href="products.html">Transformation</a><a href="products.html">Explore More...</a></div><div class="footer-col"><h3>About Us</h3><a href="about.html">Our Story</a><a href="materials.html">Materials</a><a href="materials.html">Care guide</a><a href="about.html">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Soul Stones. All rights reserved.</span><div class="legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></footer>
-    <div class="toast"></div><script src="script.js"></script>
+    <header class="site-header">
+      <a class="logo-link" href="index.html"><img class="logo-mark" src="assets/logo-mark.png" alt=""><span class="brand-name">Soul Stone</span></a>
+      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
+      <div class="nav-wrap"><nav class="main-nav"><a href="index.html">Home</a><a href="products.html">Products</a><a href="materials.html">Materials</a><a href="custom-design.html" aria-current="page">Custom Design</a><a href="about.html">About Us</a><a href="login.html">Login</a><a class="cart-link" href="cart.html" aria-label="Cart"><span class="bag-icon" aria-hidden="true"></span><span class="cart-count">0</span></a></nav><a class="black-button" href="custom-design.html">Start Designing</a></div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <h1>Custom Design</h1>
+        <p>Choose stones and symbolic details, then watch your bracelet build itself in the center. Prices and materials update as you design.</p>
+      </section>
+
+      <section class="section designer-section">
+        <div class="bracelet-designer" id="braceletDesigner">
+          <aside class="designer-panel">
+            <span class="eyebrow">Choose Stones</span>
+            <h2>Build the energy.</h2>
+            <div class="designer-filters" aria-label="Stone filters">
+              <input id="designerStoneSearch" type="search" placeholder="Search beads...">
+              <select id="designerColorFilter">
+                <option value="all">All colors</option>
+                <option value="white">White/Clear</option>
+                <option value="pink">Pink</option>
+                <option value="purple">Purple</option>
+                <option value="black">Black</option>
+                <option value="blue">Blue</option>
+              </select>
+              <select id="designerSizeFilter">
+                <option value="all">All sizes</option>
+                <option value="6">6mm</option>
+                <option value="8">8mm</option>
+                <option value="10">10mm</option>
+              </select>
+            </div>
+            <div class="designer-options stone-option-grid" id="stoneOptionGrid" aria-label="Stone options">
+            </div>
+          </aside>
+
+          <section class="bracelet-stage" aria-label="Custom bracelet preview">
+            <div class="bracelet-preview" id="braceletPreview">
+              <div class="bracelet-ring"></div>
+              <div class="bracelet-brand"><strong>Soul Stone</strong><span>custom bracelet</span></div>
+              <div class="bracelet-items" id="braceletItems"></div>
+            </div>
+            <div class="designer-stage-actions">
+              <button class="outline-button" type="button" id="undoDesignItem">Undo</button>
+              <button class="outline-button" type="button" id="resetDesign">Reset</button>
+            </div>
+          </section>
+
+          <aside class="designer-panel designer-summary">
+            <span class="eyebrow">Details</span>
+            <h2>Finish the piece.</h2>
+            <div class="designer-options charm-options" aria-label="Charm options">
+              <button class="designer-option" type="button" data-design-type="charm" data-name="Moon Charm" data-zh="月亮吊坠" data-price="8" data-symbol="☾"><span class="charm-symbol">☾</span><span>Moon Charm</span><b>$8</b></button>
+              <button class="designer-option" type="button" data-design-type="charm" data-name="Star Charm" data-zh="星星吊坠" data-price="8" data-symbol="✦"><span class="charm-symbol">✦</span><span>Star Charm</span><b>$8</b></button>
+              <button class="designer-option" type="button" data-design-type="spacer" data-name="Gold Spacer" data-zh="金色隔珠" data-price="3" data-symbol="•"><span class="charm-symbol">•</span><span>Gold Spacer</span><b>$3</b></button>
+            </div>
+            <div class="designer-info">
+              <div><span>Base</span><b>$28 AUD</b></div>
+              <div><span>Stones</span><b id="designerStoneCount">0</b></div>
+              <div><span>Accessories</span><b id="designerAccessoryCount">0</b></div>
+              <div class="designer-length-row"><label for="designerLengthSelect">Length</label><select id="designerLengthSelect"><option value="16">16 cm</option><option value="17">17 cm</option><option value="18" selected>18 cm</option><option value="19">19 cm</option><option value="20">20 cm</option></select></div>
+              <div><span>Used Length</span><b id="designerLength">0.0 / 18 cm</b></div>
+              <div class="designer-total"><span>Total</span><b id="designerTotal">$28 AUD</b></div>
+            </div>
+            <div class="designer-materials">
+              <h3>Bracelet Information</h3>
+              <p id="designerMaterials">Start by choosing a stone from the left panel.</p>
+            </div>
+            <button class="black-button" type="button" id="addCustomDesign">Add Custom Bracelet to Cart</button>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-main"><div class="footer-brand"><img src="assets/logo-mark.png" alt=""><div><h2>Soul Stones</h2><div class="mini">Intentional Handmade Jewelry</div></div><p>Meaningful handmade jewelry crafted with crystals, natural gemstones and symbolic charms for every chapter of your life.</p><div class="socials"><a href="#">◎</a><a href="#">in</a><a href="#">X</a><a href="#">♪</a></div></div><div class="footer-col"><h3>Shop</h3><a href="shop.html#collection-gallery">Collection Gallery</a><a href="custom-design.html">Custom Design</a><a href="shop.html#new-arrivals">New Arrivals</a><a href="shop.html#gift-ideas">Gift Ideas</a></div><div class="footer-col"><h3>Themes</h3><a href="shop.html">Self Love</a><a href="shop.html">Protection</a><a href="shop.html">Transformation</a><a href="shop.html">Explore More...</a></div><div class="footer-col"><h3>About Us</h3><a href="about.html">Our Story</a><a href="materials.html">Materials</a><a href="materials.html#care-guide">Care guide</a><a href="about.html#contact">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Soul Stones. All rights reserved.</span><div class="legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></footer>
+    <div class="toast"></div><script src="script.js?v=bracelet-drag"></script>
   </body>
 </html>
