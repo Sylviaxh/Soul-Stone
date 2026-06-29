@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Cart | Soul Stone</title><link rel="stylesheet" href="styles.css?v=cart-layout-polish"></head>
+  <body>
+    <header class="site-header"><a class="logo-link" href="index.php"><img class="logo-mark" src="assets/logo-mark.png" alt=""><span class="brand-name">Soul Stone</span></a><button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button><div class="nav-wrap"><nav class="main-nav"><a href="index.php">Home</a><a href="products.php">Products</a><a href="materials.php">Materials</a><a href="custom-design.php">Custom Design</a><a href="about.php">About Us</a><a href="login.php">Login</a><a class="cart-link" href="cart.php" aria-current="page" aria-label="Cart"><span class="bag-icon" aria-hidden="true"></span><span class="cart-count">0</span></a></nav><a class="black-button" href="custom-design.php">Start Designing</a></div></header>
+    <main><section class="cart-hero"><div><span class="eyebrow">Your Selection</span><h1>Cart</h1><p>Review your Soul Stone pieces, custom bracelet details and design previews before checkout.</p></div><div class="cart-hero-summary"><span>Estimated total</span><strong id="cartHeroTotal">$0 AUD</strong><small>Secure checkout connection coming next.</small></div></section><section class="section cart-section"><article class="card cart-panel"><div class="card-body"><h2>Your cart</h2><div id="cartItems"></div><div class="cart-total"><span>Total</span><strong id="cartTotal">$0 AUD</strong></div><a class="black-button" href="shop.php">Continue Shopping</a></div></article></section></main>
+    <footer class="site-footer"><div class="footer-bottom"><span>© 2026 Soul Stones. All rights reserved.</span><div class="legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></footer>
+    <div class="toast"></div><script src="script.js?v=cart-layout-polish"></script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Three-way bead">
+  <defs>
+    <radialGradient id="g" cx="34%" cy="26%" r="76%">
+      <stop offset="0" stop-color="#fff4d1"/>
+      <stop offset=".4" stop-color="#d7aa5b"/>
+      <stop offset="1" stop-color="#9b6e33"/>
+    </radialGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#4d351f" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="54" fill="url(#g)" filter="url(#s)"/>
+  <circle cx="80" cy="80" r="16" fill="#fff7e5" opacity=".8"/>
+  <path d="M80 32v30M42 102l26-15M118 102 92 87" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="59" cy="57" r="10" fill="#fff" opacity=".38"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Amethyst bead">
+  <defs>
+    <radialGradient id="g" cx="34%" cy="28%" r="72%">
+      <stop offset="0" stop-color="#fff7ff"/>
+      <stop offset=".2" stop-color="#c7b2eb"/>
+      <stop offset=".56" stop-color="#8d6fc2"/>
+      <stop offset="1" stop-color="#5d438e"/>
+    </radialGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#46311f" flood-opacity=".18"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="120" r="82" fill="url(#g)" filter="url(#s)"/>
+  <circle cx="88" cy="78" r="18" fill="#fff" opacity=".5"/>
+  <path d="M57 124c31 18 78 22 125-14" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="12"/>
+</svg>

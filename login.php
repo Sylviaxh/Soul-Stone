@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Login | Soul Stone</title><link rel="stylesheet" href="styles.css"></head>
+  <body>
+    <header class="site-header"><a class="logo-link" href="index.php"><img class="logo-mark" src="assets/logo-mark.png" alt=""><span class="brand-name">Soul Stone</span></a><button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button><div class="nav-wrap"><nav class="main-nav"><a href="index.php">Home</a><a href="products.php">Products</a><a href="materials.php">Materials</a><a href="custom-design.php">Custom Design</a><a href="about.php">About Us</a><a href="login.php" aria-current="page">Login</a><a class="cart-link" href="cart.php" aria-label="Cart"><span class="bag-icon" aria-hidden="true"></span><span class="cart-count">0</span></a></nav><a class="black-button" href="custom-design.php">Start Designing</a></div></header>
+    <main><section class="page-hero"><h1>Login</h1><p>Customer accounts will hold custom designs, wishlists, order history and saved intentions.</p></section><section class="section"><form class="form-grid" data-form="Login prototype submitted."><input type="email" required placeholder="Email address"><input type="password" required placeholder="Password"><button class="black-button" type="submit">Login</button></form></section></main>
+    <footer class="site-footer"><div class="footer-bottom"><span>© 2026 Soul Stones. All rights reserved.</span><div class="legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></footer>
+    <div class="toast"></div><script src="script.js"></script>
+  </body>
+</html>

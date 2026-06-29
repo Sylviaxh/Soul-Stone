@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>All Products | Soul Stone</title>
+    <link rel="stylesheet" href="styles.css?v=shop-five-columns">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo-link" href="index.php"><img class="logo-mark" src="assets/logo-mark.png" alt=""><span class="brand-name">Soul Stone</span></a>
+      <button class="menu-button" aria-label="Open navigation" aria-expanded="false"><span></span></button>
+      <div class="nav-wrap"><nav class="main-nav"><a href="index.php">Home</a><a href="products.php" aria-current="page">Products</a><a href="materials.php">Materials</a><a href="custom-design.php">Custom Design</a><a href="about.php">About Us</a><a href="login.php">Login</a><a class="cart-link" href="cart.php" aria-label="Cart"><span class="bag-icon" aria-hidden="true"></span><span class="cart-count">0</span></a></nav><a class="black-button" href="custom-design.php">Start Designing</a></div>
+    </header>
+
+    <main>
+      <section class="shop-hero">
+        <div>
+          <span class="eyebrow">Shop Soul Stone</span>
+          <h1>All Products</h1>
+          <p>Browse every placeholder product in one tighter catalog. Filter by theme, main stone, and price range, then open any product for a detailed page.</p>
+          <div class="shop-nav" aria-label="Product sections">
+            <a href="shop.php">All</a>
+            <a href="shop.php#collection-gallery">Collection Gallery</a>
+            <a href="shop.php#new-arrivals">New Arrivals</a>
+            <a href="shop.php#gift-ideas">Gift Ideas</a>
+          </div>
+        </div>
+        <div class="shop-hero-image" role="img" aria-label="Soul Stone bracelet collection"></div>
+      </section>
+
+      <section class="section catalog-section" id="collection-gallery">
+        <div class="catalog-head">
+          <div>
+            <span class="eyebrow">Product Catalog</span>
+            <h2 class="section-title">Choose by intention.</h2>
+          </div>
+          <p>Prices, names and descriptions are default placeholders for now. The structure is ready for a larger real product catalog later.</p>
+        </div>
+
+        <div class="filter-panel" aria-label="Product filters">
+          <div class="filter-field">
+            <label for="themeFilter">Theme</label>
+            <select id="themeFilter">
+              <option value="all">All themes</option>
+              <option value="Transformation">Transformation</option>
+              <option value="Self Love">Self Love</option>
+              <option value="Protection">Protection</option>
+              <option value="Focus">Focus</option>
+              <option value="New Beginning">New Beginning</option>
+              <option value="Gift">Gift Ideas</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="stoneFilter">Main stone</label>
+            <select id="stoneFilter">
+              <option value="all">All stones</option>
+              <option value="Moonstone">Moonstone</option>
+              <option value="Rose Quartz">Rose Quartz</option>
+              <option value="Obsidian">Obsidian</option>
+              <option value="Amethyst">Amethyst</option>
+              <option value="Clear Quartz">Clear Quartz</option>
+              <option value="Aquamarine">Aquamarine</option>
+              <option value="Cat's Eye">Cat's Eye</option>
+              <option value="Silver Obsidian">Silver Obsidian</option>
+            </select>
+          </div>
+          <div class="filter-field">
+            <label for="priceFilter">Price</label>
+            <select id="priceFilter">
+              <option value="all">All prices</option>
+              <option value="0-49">Under $50</option>
+              <option value="50-69">$50 - $69</option>
+              <option value="70-999">$70+</option>
+            </select>
+          </div>
+          <button class="outline-button" type="button" id="clearFilters">Clear Filters</button>
+        </div>
+
+        <div class="product-list-grid" id="productGrid">
+          <article class="shop-product-card" data-theme="Transformation" data-stone="Moonstone" data-price="49" data-category="collection-gallery">
+            <a class="shop-product-link" href="product.php?id=transformation-moonstone-bracelet"><img src="assets/collection-bracelets.png" alt="Transformation Moonstone Bracelet"><div class="shop-product-body"><span class="product-meta">Transformation</span><h3>Transformation Moonstone Bracelet</h3><p>Moonstone, amethyst and clear quartz with a celestial charm.</p><span class="product-price">$49 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Transformation Moonstone Bracelet" data-price="49">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Self Love" data-stone="Rose Quartz" data-price="45" data-category="collection-gallery">
+            <a class="shop-product-link" href="product.php?id=self-love-rose-quartz-bracelet"><img src="assets/collection-bracelets.png" alt="Self Love Rose Quartz Bracelet"><div class="shop-product-body"><span class="product-meta">Self Love</span><h3>Self Love Rose Quartz Bracelet</h3><p>Soft rose quartz and moonstone tones for tenderness.</p><span class="product-price">$45 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Self Love Rose Quartz Bracelet" data-price="45">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Protection" data-stone="Obsidian" data-price="48" data-category="collection-gallery">
+            <a class="shop-product-link" href="product.php?id=protection-obsidian-bracelet"><img src="assets/obsidian-preview.png" alt="Protection Obsidian Bracelet"><div class="shop-product-body"><span class="product-meta">Protection</span><h3>Protection Obsidian Bracelet</h3><p>Obsidian and clear quartz for grounding and boundaries.</p><span class="product-price">$48 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Protection Obsidian Bracelet" data-price="48">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Focus" data-stone="Amethyst" data-price="46" data-category="collection-gallery">
+            <a class="shop-product-link" href="product.php?id=focus-amethyst-bracelet"><img src="assets/collection-bracelets.png" alt="Focus Amethyst Bracelet"><div class="shop-product-body"><span class="product-meta">Focus</span><h3>Focus Amethyst Bracelet</h3><p>Amethyst and clear quartz for study and clarity.</p><span class="product-price">$46 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Focus Amethyst Bracelet" data-price="46">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="New Beginning" data-stone="Moonstone" data-price="49" data-category="collection-gallery">
+            <a class="shop-product-link" href="product.php?id=new-beginning-moonstone-bracelet"><img src="assets/hero-bracelet.png" alt="New Beginning Moonstone Bracelet"><div class="shop-product-body"><span class="product-meta">New Beginning</span><h3>New Beginning Moonstone Bracelet</h3><p>A luminous piece for graduation, moving and fresh starts.</p><span class="product-price">$49 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="New Beginning Moonstone Bracelet" data-price="49">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Focus" data-stone="Clear Quartz" data-price="42" data-category="collection-gallery">
+            <a class="shop-product-link" href="product.php?id=clear-quartz-charm-bracelet"><img src="assets/stone-clear-quartz.png" alt="Clear Quartz Charm Bracelet"><div class="shop-product-body"><span class="product-meta">Clarity</span><h3>Clear Quartz Charm Bracelet</h3><p>A minimal bracelet for clarity and intention stacking.</p><span class="product-price">$42 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Clear Quartz Charm Bracelet" data-price="42">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="New Beginning" data-stone="Aquamarine" data-price="52" data-category="new-arrivals" id="new-arrivals">
+            <a class="shop-product-link" href="product.php?id=aquamarine-calm-bracelet"><img src="assets/stone-aquamarine.png" alt="Aquamarine Calm Bracelet"><div class="shop-product-body"><span class="product-meta">Calm</span><h3>Aquamarine Calm Bracelet</h3><p>Pale aquamarine for quiet courage and communication.</p><span class="product-price">$52 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Aquamarine Calm Bracelet" data-price="52">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Self Love" data-stone="Cat's Eye" data-price="44" data-category="new-arrivals">
+            <a class="shop-product-link" href="product.php?id=pink-catseye-glow-bracelet"><img src="assets/stone-pink-catseye.png" alt="Pink Cat’s Eye Glow Bracelet"><div class="shop-product-body"><span class="product-meta">Soft Glow</span><h3>Pink Cat’s Eye Glow Bracelet</h3><p>Pink cat’s eye beads with a silky confident glow.</p><span class="product-price">$44 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Pink Cat’s Eye Glow Bracelet" data-price="44">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Protection" data-stone="Silver Obsidian" data-price="54" data-category="new-arrivals">
+            <a class="shop-product-link" href="product.php?id=silver-obsidian-insight-bracelet"><img src="assets/stone-silver-obsidian.png" alt="Silver Obsidian Insight Bracelet"><div class="shop-product-body"><span class="product-meta">Insight</span><h3>Silver Obsidian Insight Bracelet</h3><p>Silver obsidian for reflection and inner strength.</p><span class="product-price">$54 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Silver Obsidian Insight Bracelet" data-price="54">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Gift" data-stone="Moonstone" data-price="68" data-category="gift-ideas" id="gift-ideas">
+            <a class="shop-product-link" href="product.php?id=new-chapter-gift-set"><img src="assets/hero-bracelet.png" alt="New Chapter Gift Set"><div class="shop-product-body"><span class="product-meta">Gift Set</span><h3>New Chapter Gift Set</h3><p>A moonstone bracelet with a default intention card.</p><span class="product-price">$68 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="New Chapter Gift Set" data-price="68">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Gift" data-stone="Clear Quartz" data-price="75" data-category="gift-ideas">
+            <a class="shop-product-link" href="product.php?id=custom-intention-gift-card"><img src="assets/about-studio.png" alt="Custom Intention Gift Card"><div class="shop-product-body"><span class="product-meta">Custom Gift</span><h3>Custom Intention Gift Card</h3><p>A custom design option for a personal intention-led gift.</p><span class="product-price">$75 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Custom Intention Gift Card" data-price="75">Add to Cart</button></div>
+          </article>
+          <article class="shop-product-card" data-theme="Gift" data-stone="Rose Quartz" data-price="88" data-category="gift-ideas">
+            <a class="shop-product-link" href="product.php?id=friendship-intention-pair"><img src="assets/collection-bracelets.png" alt="Friendship Intention Pair"><div class="shop-product-body"><span class="product-meta">Pair Set</span><h3>Friendship Intention Pair</h3><p>Two coordinated bracelets for friendship or shared milestones.</p><span class="product-price">$88 AUD</span></div></a>
+            <div class="shop-product-body"><button class="black-button add-cart" type="button" data-product="Friendship Intention Pair" data-price="88">Add to Cart</button></div>
+          </article>
+        </div>
+        <p class="catalog-empty" id="catalogEmpty">No products match these filters yet.</p>
+        <div class="pagination" id="catalogPagination" aria-label="Product pagination"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="footer-main"><div class="footer-brand"><img src="assets/logo-mark.png" alt=""><div><h2>Soul Stones</h2><div class="mini">Intentional Handmade Jewelry</div></div><p>Meaningful handmade jewelry crafted with crystals, natural gemstones and symbolic charms for every chapter of your life.</p><div class="socials"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">◎</a><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">in</a><a href="https://x.com/" target="_blank" rel="noopener noreferrer">X</a><a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">♪</a></div></div><div class="footer-col"><h3>Shop</h3><a href="shop.php#collection-gallery">Collection Gallery</a><a href="custom-design.php">Custom Design</a><a href="shop.php#new-arrivals">New Arrivals</a><a href="shop.php#gift-ideas">Gift Ideas</a></div><div class="footer-col"><h3>Themes</h3><a href="shop.php">Self Love</a><a href="shop.php">Protection</a><a href="shop.php">Transformation</a><a href="shop.php">Explore More...</a></div><div class="footer-col"><h3>About Us</h3><a href="about.php">Our Story</a><a href="materials.php">Materials</a><a href="materials.php#care-guide">Care guide</a><a href="about.php#contact">Contact</a></div></div><div class="footer-bottom"><span>© 2026 Soul Stones. All rights reserved.</span><div class="legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div></footer>
+    <div class="toast"></div><script src="script.js?v=shop-five-columns"></script>
+  </body>
+</html>

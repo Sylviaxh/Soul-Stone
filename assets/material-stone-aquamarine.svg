@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Aquamarine bead">
+  <defs>
+    <radialGradient id="g" cx="36%" cy="28%" r="76%">
+      <stop offset="0" stop-color="#fbffff"/>
+      <stop offset=".28" stop-color="#bfe8ed"/>
+      <stop offset=".62" stop-color="#7bc8d3"/>
+      <stop offset="1" stop-color="#4a96a8"/>
+    </radialGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#254f5a" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="120" r="82" fill="url(#g)" filter="url(#s)"/>
+  <path d="M61 104c34 15 80 12 119-10M62 148c46-8 78 10 116 0" fill="none" stroke="#fff" stroke-opacity=".24" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="88" cy="78" r="18" fill="#fff" opacity=".55"/>
+</svg>
