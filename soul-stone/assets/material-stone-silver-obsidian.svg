@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Silver obsidian bead">
+  <defs>
+    <radialGradient id="g" cx="36%" cy="28%" r="76%">
+      <stop offset="0" stop-color="#f5f2ee"/>
+      <stop offset=".2" stop-color="#8f8b88"/>
+      <stop offset=".56" stop-color="#2b2929"/>
+      <stop offset="1" stop-color="#080808"/>
+    </radialGradient>
+    <linearGradient id="shine" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".48" stop-color="#fff" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#111" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="120" r="82" fill="url(#g)" filter="url(#s)"/>
+  <path d="M59 113c40-18 80-16 122 2" stroke="url(#shine)" stroke-width="22" stroke-linecap="round" fill="none" opacity=".78"/>
+  <circle cx="88" cy="78" r="18" fill="#fff" opacity=".38"/>
+</svg>

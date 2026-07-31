@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Obsidian bead">
+  <defs>
+    <radialGradient id="g" cx="34%" cy="26%" r="74%">
+      <stop offset="0" stop-color="#f4eee7"/>
+      <stop offset=".14" stop-color="#6a5c55"/>
+      <stop offset=".46" stop-color="#1d1a18"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#111" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="120" r="82" fill="url(#g)" filter="url(#s)"/>
+  <ellipse cx="90" cy="76" rx="21" ry="15" fill="#fff" opacity=".34"/>
+  <path d="M63 136c39 12 86 6 118-24" fill="none" stroke="#fff" stroke-opacity=".12" stroke-width="10" stroke-linecap="round"/>
+</svg>

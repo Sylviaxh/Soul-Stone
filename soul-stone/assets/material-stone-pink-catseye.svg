@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Pink cat's eye bead">
+  <defs>
+    <radialGradient id="g" cx="36%" cy="28%" r="76%">
+      <stop offset="0" stop-color="#fff8fb"/>
+      <stop offset=".24" stop-color="#f5c6d4"/>
+      <stop offset=".62" stop-color="#df8faa"/>
+      <stop offset="1" stop-color="#ad637e"/>
+    </radialGradient>
+    <linearGradient id="band" x1="0" x2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".72"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#5d3b38" flood-opacity=".15"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="120" r="82" fill="url(#g)" filter="url(#s)"/>
+  <path d="M61 122c43-15 79-16 118 0" stroke="url(#band)" stroke-width="24" stroke-linecap="round" fill="none" opacity=".8"/>
+  <circle cx="88" cy="78" r="17" fill="#fff" opacity=".5"/>
+</svg>

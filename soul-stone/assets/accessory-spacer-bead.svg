@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-label="Spacer bead">
+  <defs>
+    <linearGradient id="g" x1="30" y1="28" x2="130" y2="132">
+      <stop offset="0" stop-color="#fff2c8"/>
+      <stop offset=".5" stop-color="#d8aa5c"/>
+      <stop offset="1" stop-color="#986c35"/>
+    </linearGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#4d351f" flood-opacity=".16"/>
+    </filter>
+  </defs>
+  <circle cx="80" cy="80" r="48" fill="url(#g)" filter="url(#s)"/>
+  <circle cx="80" cy="80" r="18" fill="#fff9e9"/>
+  <path d="M47 71h66M47 89h66" stroke="#fff" stroke-opacity=".46" stroke-width="7" stroke-linecap="round"/>
+</svg>

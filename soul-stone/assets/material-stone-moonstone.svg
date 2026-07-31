@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Moonstone bead">
+  <defs>
+    <radialGradient id="g" cx="36%" cy="28%" r="76%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".28" stop-color="#e9edf6"/>
+      <stop offset=".55" stop-color="#cbd7ee"/>
+      <stop offset=".78" stop-color="#f2dbe5"/>
+      <stop offset="1" stop-color="#b3b8cb"/>
+    </radialGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#45434d" flood-opacity=".15"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="120" r="82" fill="url(#g)" filter="url(#s)"/>
+  <path d="M55 118c34-14 73-10 128 16" fill="none" stroke="#fff" stroke-opacity=".42" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="88" cy="77" r="18" fill="#fff" opacity=".58"/>
+</svg>

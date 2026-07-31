@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="Clear quartz bead">
+  <defs>
+    <radialGradient id="g" cx="36%" cy="28%" r="76%">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".34" stop-color="#f3f0ec"/>
+      <stop offset=".64" stop-color="#d7d0ca"/>
+      <stop offset="1" stop-color="#aaa39f"/>
+    </radialGradient>
+    <filter id="s" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="16" flood-color="#4a433d" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <circle cx="120" cy="120" r="82" fill="url(#g)" filter="url(#s)" opacity=".86"/>
+  <path d="M67 91h106M58 129h124M78 165h86M91 54l-12 132M141 57l18 126" fill="none" stroke="#fff" stroke-opacity=".44" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="88" cy="78" r="18" fill="#fff" opacity=".62"/>
+</svg>
